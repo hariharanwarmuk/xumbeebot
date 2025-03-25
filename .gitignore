@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+xumbee/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Allow only specific files
+/*
+!.gitignore
+!README.md
+!/bot/
+
+# Within bot folder, ignore everything except specific files
+/bot/*
+!/bot/app.py
+!/bot/db_setup.py
+!/bot/db_queries.py
+!/bot/openai_client.py
+!/bot/vector_search.py
+!/bot/templates/
+
+# Within templates folder, ignore everything except specific files
+/bot/templates/*
+!/bot/templates/login.html
+!/bot/templates/chat.html
+!/bot/templates/select_case.html

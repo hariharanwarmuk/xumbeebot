@@ -1,0 +1,20 @@
+<!-- templates/select_case.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Select Case</title>
+  </head>
+  <body>
+    <h2>Select an Open Case</h2>
+    <ul>
+      {% for case in open_cases %}
+        <li>
+          Case ID: {{ case.case_id }} - {{ case.case_subject }}
+          <a href="{{ url_for('chat') }}?case_id={{ case.case_id }}">Open Chat</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <p><a href="/logout">Logout</a></p>
+  </body>
+</html>

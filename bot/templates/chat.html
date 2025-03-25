@@ -1,0 +1,22 @@
+<!-- templates/chat.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Chat - Case {{ case_id }}</title>
+  </head>
+  <body>
+    <h2>Chat for Case ID: {{ case_id }}</h2>
+    <form method="POST" action="{{ url_for('chat') }}?case_id={{ case_id }}">
+      <input type="text" name="message" placeholder="Enter your message..." required>
+      <button type="submit">Send</button>
+    </form>
+    <hr>
+    <div>
+      {% for msg in conversation %}
+        <p><strong>{{ msg.role }}:</strong> {{ msg.content }}</p>
+      {% endfor %}
+    </div>
+    <p><a href="/logout">Logout</a></p>
+  </body>
+</html>
